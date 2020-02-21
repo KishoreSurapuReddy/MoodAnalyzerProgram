@@ -6,6 +6,7 @@ public class TestMoodAnalyser {
     static MoodAnalyser analyser;
     String happyMessage = "I am in Happy mood";
     String sadMessage = "I am in SAD mood";
+    String anyMessage = "I am in Any mood";
 
     @BeforeClass
     public static void init(){
@@ -22,5 +23,11 @@ public class TestMoodAnalyser {
     public void givenSadMessage_WhenAnalyse_ReturnSad(){
         String validateMessage = analyser.analyseMood(sadMessage);
         Assert.assertEquals("SAD",validateMessage);
+    }
+
+    @Test
+    public void givenAnyMessage_WhenAnalyse_ReturnHappy(){
+        String validateMessage = analyser.analyseMood(anyMessage);
+        Assert.assertEquals("HAPPY" , validateMessage);
     }
 }
