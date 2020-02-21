@@ -15,19 +15,22 @@ public class TestMoodAnalyser {
 
     @Test
     public void givenHappyMessage_WhenAnalyse_ReturnHappy(){
-        String validateMessage = analyser.analyseMood(happyMessage);
+        analyser = new MoodAnalyser(happyMessage);
+        String validateMessage = analyser.analyseMood();
         Assert.assertEquals("HAPPY",validateMessage);
     }
 
     @Test
     public void givenSadMessage_WhenAnalyse_ReturnSad(){
-        String validateMessage = analyser.analyseMood(sadMessage);
+        analyser = new MoodAnalyser(sadMessage);
+        String validateMessage = analyser.analyseMood();
         Assert.assertEquals("SAD",validateMessage);
     }
 
     @Test
     public void givenAnyMessage_WhenAnalyse_ReturnHappy(){
-        String validateMessage = analyser.analyseMood(anyMessage);
+        analyser = new MoodAnalyser(anyMessage);
+        String validateMessage = analyser.analyseMood();
         Assert.assertEquals("HAPPY" , validateMessage);
     }
 }
