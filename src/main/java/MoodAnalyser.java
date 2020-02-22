@@ -10,12 +10,12 @@ public class MoodAnalyser {
     }
 
     public String analyseMood() {
-        if (this.message.toLowerCase().matches("(.*)happy(.*)")){
-            return "HAPPY";
+        if (this.message.toLowerCase().matches("(.*)sad(.*)")){
+            return "SAD";
         }
         if (this.message.toLowerCase().matches("(.*)any(.*)")){
             return "HAPPY";
         }
-        return "SAD";
+        return "HAPPY";
     }
 }
