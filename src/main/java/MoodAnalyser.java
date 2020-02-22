@@ -14,9 +14,6 @@ public class MoodAnalyser {
             if (this.message.toLowerCase().matches("(.*)sad(.*)")) {
                 return "SAD";
             }
-            if (this.message.toLowerCase().matches("(.*)any(.*)")) {
-                return "HAPPY";
-            }
         }
         catch (Exception e){
             return "HAPPY";
