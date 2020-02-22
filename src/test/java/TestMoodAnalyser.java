@@ -1,11 +1,12 @@
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestMoodAnalyser {
     MoodAnalyser analyser;
 
-    @BeforeClass
+    @AfterEach
     public void init(){
         analyser = new MoodAnalyser();
     }
@@ -15,7 +16,7 @@ public class TestMoodAnalyser {
         String sadMessage = "I am in SAD mood";
         analyser = new MoodAnalyser(sadMessage);
         String validateMessage = analyser.analyseMood();
-        Assert.assertEquals("SAD",validateMessage);
+        assertEquals("SAD",validateMessage);
     }
 
     @Test
@@ -23,6 +24,6 @@ public class TestMoodAnalyser {
         String anyMessage = "I am in Any mood";
         analyser = new MoodAnalyser(anyMessage);
         String validateMessage = analyser.analyseMood();
-        Assert.assertEquals("HAPPY" , validateMessage);
+        assertEquals("HAPPY" , validateMessage);
     }
 }
