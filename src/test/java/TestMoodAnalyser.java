@@ -33,4 +33,11 @@ public class TestMoodAnalyser {
         String validateMessage = analyser.analyseMood();
         assertEquals("HAPPY" , validateMessage);
     }
+
+    @Test
+    public void givenNullMessage_WhenAnalyse_ThrowMoodAnalysisException(){
+        analyser = new MoodAnalyser(null);
+        Exception exception = assertThrows(MoodAnalysisException.class , () -> analyser.analyseMood());
+        assertEquals("NULL" , exception.getMessage());
+    }
 }
