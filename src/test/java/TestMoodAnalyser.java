@@ -33,4 +33,11 @@ public class TestMoodAnalyser {
         String validateMessage = analyser.analyseMood();
         Assert.assertEquals("HAPPY" , validateMessage);
     }
+
+    @Test
+    public void givenNullMessage_WhenAnalyse_ReturnHappy(){
+        analyser = new MoodAnalyser(null);
+        String validateMessage = analyser.analyseMood();
+        Assert.assertEquals("HAPPY" , validateMessage);
+    }
 }
