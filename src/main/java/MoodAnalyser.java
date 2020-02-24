@@ -12,18 +12,19 @@ public class MoodAnalyser {
 
     public String analyseMood() throws MoodAnalysisException {
         try {
-            if (message.length() == 0){
+            if (message == " "){
                 throw new MoodAnalysisException(MoodAnalysisException.Invalid.EMPTY,"string is Empty");
             }
-
             if (this.message.toLowerCase().matches("(.*)sad(.*)")) {
                 return "SAD";
             }
         }
+        catch (MoodAnalysisException e){
+            throw new MoodAnalysisException(MoodAnalysisException.Invalid.EMPTY , "String is Empty");
+        }
         catch (NullPointerException e){
             throw new MoodAnalysisException(MoodAnalysisException.Invalid.NULL,"string is Null");
         }
-
         return "HAPPY";
     }
 }
