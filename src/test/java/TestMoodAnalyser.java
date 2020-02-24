@@ -29,8 +29,15 @@ public class TestMoodAnalyser {
 
     @Test
     public void givenNullMessage_WhenAnalyse_ThrowMoodAnalysisException(){
-        analyser = new MoodAnalyser();
+        analyser = new MoodAnalyser(null);
         MoodAnalysisException exception = assertThrows(MoodAnalysisException.class , () -> analyser.analyseMood());
         assertEquals(exception.type , MoodAnalysisException.Invalid.NULL);
+    }
+
+    @Test
+    public void givenEmptyMessage_WhenAnalyse_ThrowMoodAnalysisException(){
+        analyser = new MoodAnalyser(" ");
+        MoodAnalysisException exception = assertThrows(MoodAnalysisException.class , () -> analyser.analyseMood());
+        assertEquals(exception.type , MoodAnalysisException.Invalid.EMPTY);
     }
 }
